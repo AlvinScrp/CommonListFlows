@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "CommonListFlows"
+    },
+    {
+      "name": "common_list",
+      "value": "常见列表流场景"
+    },
+    {
+      "name": "multiple_types_list",
+      "value": "多类型列表项场景"
+    },
+    {
+      "name": "top_tab_list",
+      "value": "Tab吸顶场景"
+    },
+    {
+      "name": "group_ceiling",
+      "value": "分组吸顶场景"
+    },
+    {
+      "name": "secondary_linkage",
+      "value": "二级联动场景"
+    },
+    {
+      "name": "loading_data",
+      "value": "数据加载中..."
+    },
+    {
+      "name": "manager_content",
+      "value": "育人之本，在于培根铸魂。思想政治理论课正是落实立德树人根本任务......"
+    }
+  ]
+}

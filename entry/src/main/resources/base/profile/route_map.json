@@ -1,0 +1,36 @@
+{
+  "routerMap": [
+    {
+      "name": "HomePage",
+      "pageSourceFile": "src/main/ets/view/HomePage.ets",
+      "buildFunction": "HomePageBuilder",
+      "data": {
+        "description": "this is HomePage"
+      }
+    },
+    {
+      "name": "ManagerPage",
+      "pageSourceFile": "src/main/ets/view/ManagerPage.ets",
+      "buildFunction": "ManagerPageBuilder",
+      "data": {
+        "description": "this is ManagerPage"
+      }
+    },
+    {
+      "name": "CityList",
+      "pageSourceFile": "src/main/ets/view/CityList.ets",
+      "buildFunction": "CityListBuilder",
+      "data": {
+        "description": "this is CityList"
+      }
+    },
+    {
+      "name": "CategoryPage",
+      "pageSourceFile": "src/main/ets/view/CategoryPage.ets",
+      "buildFunction": "CategoryPageBuilder",
+      "data": {
+        "description": "this is CategoryPage"
+      }
+    }
+  ]
+}

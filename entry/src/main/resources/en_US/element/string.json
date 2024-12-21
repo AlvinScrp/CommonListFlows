@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "CommonListFlows"
+    },
+    {
+      "name": "common_list",
+      "value": "common list flow scenarios"
+    },
+    {
+      "name": "multiple_types_list",
+      "value": "multi type list item scenario"
+    },
+    {
+      "name": "top_tab_list",
+      "value": "multi type list item scenario"
+    },
+    {
+      "name": "group_ceiling",
+      "value": "group ceiling scenario"
+    },
+    {
+      "name": "secondary_linkage",
+      "value": "secondary linkage scenario"
+    },
+    {
+      "name": "loading_data",
+      "value": "loading data"
+    },
+    {
+      "name": "manager_content",
+      "value": "The foundation of education lies in bacon forging the soul. The ideological and political theory course is precisely the fundamental task of implementing moral education and talent cultivation......"
+    }
+  ]
+}
