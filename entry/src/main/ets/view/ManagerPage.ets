@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { CustomListItem } from "./CustomListItem";
 
 @Builder
@@ -16,11 +31,12 @@ struct ManagerPage {
   private tabsController: TabsController = new TabsController();
   private contentTabController: TabsController = new TabsController();
   private searchController: SearchController = new SearchController();
-  private tabArray: string[] = ['关注', '推荐', '热搜', '更多'];
+  private tabArray: Resource[] =
+    [$r('app.string.follow'), $r('app.string.hot_search'), $r('app.string.recommend'), $r('app.string.more')];
 
-  // 更多投资内容builder
+  // More investment content.
   @Builder
-  moreContentBuilder(value: string) {
+  moreContentBuilder(value: Resource) {
     Row() {
       Image($r('app.media.app_icon'))
         .width(28)
@@ -36,20 +52,22 @@ struct ManagerPage {
     .padding({ left: 12, right: 12 })
   }
 
-  // 内容中的自定义Tab
+  // Custom Tab in Content.
   @Builder
   myTabBuilder(title: string, index: number) {
     Row({ space: 16 }) {
       Text(title)
         .width(500)
-        .fontSize(this.currentTabIndex === index ? 20 : 18)
-        .fontColor(this.currentTabIndex === index ? '#66BEFF' : Color.Black)
+        .padding({ bottom: 10 })
+        .fontColor(this.currentTabIndex === index ? '#0a59f7' : Color.Black)
+        .decoration(this.currentTabIndex === index ? { type: TextDecorationType.Underline, color: '#0a59f7' } :
+          { type: TextDecorationType.None })
     }
     .width(60)
     .height(40)
     .padding({ left: 12 })
     .onClick(() => {
-      // 点击切换tabs内容
+      // Click to switch tabs content.
       this.contentTabController.changeIndex(index);
       this.currentTabIndex = index;
     })
@@ -61,12 +79,12 @@ struct ManagerPage {
         Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.tabsController }) {
           TabContent() {
             Stack({ alignContent: Alignment.Top }) {
-              // 首页页面内容
+              // Home page content.
               Scroll(this.scrollController) {
                 Column() {
-                  // 更多投资
+                  // More investment content.
                   Column() {
-                    Text('更多投资')
+                    Text($r('app.string.more_investment'))
                       .width('100%')
                       .fontSize(18)
                       .fontWeight(FontWeight.Bold)
@@ -74,15 +92,15 @@ struct ManagerPage {
                       .textAlign(TextAlign.Start)
                     List() {
                       ListItem() {
-                        this.moreContentBuilder('期货')
+                        this.moreContentBuilder($r('app.string.futures_trading'))
                       }
 
                       ListItem() {
-                        this.moreContentBuilder('基金')
+                        this.moreContentBuilder($r('app.string.foundation'))
                       }
 
                       ListItem() {
-                        this.moreContentBuilder('保险')
+                        this.moreContentBuilder($r('app.string.insurance'))
                       }
                     }
                     .width('100%')
@@ -97,7 +115,7 @@ struct ManagerPage {
                   }
 
                   Column() {
-                    // 自定义Tabbar
+                    // Customize Tabbar.
                     Row() {
                       ForEach(this.tabArray, (item: string, index: number) => {
                         this.myTabBuilder(item, index);
@@ -131,28 +149,28 @@ struct ManagerPage {
                         .height('100%')
                         .scrollBar(BarState.Off)
                         .edgeEffect(EdgeEffect.None)
-                        // 自定义tabbar通过原生属性配合calc计算高度实现吸顶
+                        // Customize the tabbar to achieve ceiling suction by combining the nestdScroll attribute with Calc to calculate height.
                         .nestedScroll({
                           scrollForward: NestedScrollMode.PARENT_FIRST,
                           scrollBackward: NestedScrollMode.SELF_FIRST
                         })
                       }
-                      .tabBar('关注')
+                      .tabBar($r('app.string.follow'))
 
                       TabContent() {
-                        Text('推荐的内容')
+                        Text($r('app.string.recommend_content'))
                       }
-                      .tabBar('推荐')
+                      .tabBar($r('app.string.recommend'))
 
                       TabContent() {
-                        Text('热搜的内容')
+                        Text($r('app.string.hot_search_content'))
                       }
-                      .tabBar('热搜')
+                      .tabBar($r('app.string.hot_search'))
 
                       TabContent() {
-                        Text('更多的内容')
+                        Text($r('app.string.more_content'))
                       }
-                      .tabBar('更多')
+                      .tabBar($r('app.string.more'))
                     }
                     .width('100%')
                     .height('100%')
@@ -171,24 +189,28 @@ struct ManagerPage {
               .margin({ top: 65 })
               .scrollBar(BarState.Off)
 
-              // 顶部输入框
+              // Top input box.
               Row() {
                 Image($r('app.media.app_icon'))
                   .width(30)
                   .height(30)
                   .margin({ right: 10 })
-                Search({ value: this.searchVal, placeholder: '猜你想搜...', controller: this.searchController })
-                  .searchButton('搜索', { fontSize: 14 })
+                Search({
+                  value: this.searchVal,
+                  placeholder: $r('app.string.want_search'),
+                  controller: this.searchController
+                })
+                  .searchButton(getContext(this).resourceManager.getStringSync($r('app.string.search').id),
+                    { fontSize: 14 })
                   .width('75%')
                   .height(40)
                   .textFont({ size: 14 })
                   .placeholderFont({ size: 14 })
                   .backgroundColor('#F5F5F5')
                   .placeholderColor(Color.Gray)
-                Image($r('app.media.app_icon'))
-                  .width(30)
-                  .height(30)
-                  .margin({ left: 10 })
+                Text($r('app.string.more'))
+                  .padding({ left: 10 })
+                  .fontSize(14)
               }
               .width('100%')
               .height(65)
@@ -199,27 +221,27 @@ struct ManagerPage {
             .height('100%')
             .backgroundColor('#DCDCDC')
           }
-          .tabBar('首页')
+          .tabBar($r('app.string.home_page'))
 
           TabContent() {
-            Text('理财页面')
+            Text($r('app.string.manage_money_matters_page'))
           }
-          .tabBar('理财')
+          .tabBar($r('app.string.manage_money_matters'))
 
           TabContent() {
-            Text('交易页面')
+            Text($r('app.string.transaction_page'))
           }
-          .tabBar('交易')
+          .tabBar($r('app.string.transaction'))
 
           TabContent() {
-            Text('消息页面')
+            Text($r('app.string.message_page'))
           }
-          .tabBar('消息')
+          .tabBar($r('app.string.message'))
 
           TabContent() {
-            Text('我的页面')
+            Text($r('app.string.my_page'))
           }
-          .tabBar('我的')
+          .tabBar($r('app.string.my'))
         }
         .barHeight(56)
         .vertical(false)
@@ -233,5 +255,6 @@ struct ManagerPage {
       .backgroundColor('#F1F3F5')
     }
     .hideTitleBar(true)
+    .backgroundColor('#F1F3F5')
   }
 }

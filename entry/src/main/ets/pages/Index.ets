@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 @Entry
 @Component
 struct Index {
@@ -17,27 +32,27 @@ struct Index {
         Button($r('app.string.multiple_types_list'))
           .width('100%')
           .onClick(() => {
-            // 跳转应用首页（多类型列表场景）
+            // Jump to multi type list scene page.
             this.pageInfo.pushPathByName('HomePage', null);
           })
         Button($r('app.string.top_tab_list'))
           .width('100%')
           .margin({ top: 12, bottom: 12 })
           .onClick(() => {
-            // 跳转理财应用页面（Tab吸顶场景）
+            // Jump to Tab Ceiling Scene Page.
             this.pageInfo.pushPathByName('ManagerPage', null);
           })
         Button($r('app.string.group_ceiling'))
           .width('100%')
           .onClick(() => {
-            // 跳转城市列表页面（分组吸顶场景）
+            // Jump to the group ceiling scene page.
             this.pageInfo.pushPathByName('CityList', null);
           })
           .margin({ bottom: 12 })
         Button($r('app.string.secondary_linkage'))
           .width('100%')
           .onClick(() => {
-            // 跳转商品分类页面（二级联动场景）
+            // Jump to the second level linkage scene page.
             this.pageInfo.pushPathByName('CategoryPage', null);
           })
       }
@@ -49,5 +64,6 @@ struct Index {
     .title(this.NavTitleBuilder())
     .width('100%')
     .height('100%')
+    .backgroundColor('#F1F3F5')
   }
 }

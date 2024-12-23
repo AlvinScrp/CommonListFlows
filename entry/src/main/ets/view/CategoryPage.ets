@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import goodsViewModel, { GoodsDataModel, NavTitleModel } from "../viewmodel/LinkDataModel";
 
 @Builder
@@ -22,24 +37,25 @@ struct CategoryPage {
     }, 1500)
   }
 
-  // 左侧列表
+  // List content on the left.
   @Builder
   titleListBuilder(title: string, index: number) {
     Text(title)
       .width('100%')
       .height(56)
-      .fontSize(14)
+      .fontSize(this.currentTitleId === index ? 18 : 14)
       .textAlign(TextAlign.Center)
-      .fontColor(this.currentTitleId === index ? '#A2B6D6' : Color.Black)
+      .fontColor(this.currentTitleId === index ? '#0A59F7' : Color.Black)
+      .opacity(this.currentTitleId === index ? 1 : 0.6)
       .backgroundColor(this.currentTitleId === index ? '#F1F3F5' : '#E6E9EB')
       .fontWeight(this.currentTitleId === index ? FontWeight.Bold : FontWeight.Normal)
       .onClick(() => {
-        // 传入当前列表项index和true
+        // Pass in the current list item index and true.
         this.listChange(index, true);
       })
   }
 
-  // 右侧列表header
+  // Right side list header.
   @Builder
   goodsHeaderBuilder(headerName: string) {
     Row() {
@@ -54,13 +70,13 @@ struct CategoryPage {
     .backgroundColor('#F1F3F5')
   }
 
-  // 右侧列表内容
+  // List content on the right.
   @Builder
   goodsListBuilder(item: GoodsDataModel) {
     Row() {
       Image(item.imgUrl)
         .height('100%')
-        .aspectRatio(1) // 设置组件宽高比为1
+        .aspectRatio(1) // Set the aspect ratio of the component to 1.
       Column() {
         Text(item.goodsName)
           .width('100%')
@@ -86,15 +102,15 @@ struct CategoryPage {
     .borderRadius(18)
   }
 
-  // 列表滑动事件
+  // List sliding event.
   listChange(index: number, isGoods: boolean) {
     if (this.currentTitleId !== index) {
       this.currentTitleId = index;
       if (isGoods) {
-        // isGoods为true，控制右侧列表数据滑动到指定index
+        // IsGoods is true, controlling the data in the right-hand list to slide to the specified index.
         this.goodsListScroller.scrollToIndex(index);
       } else {
-        // isGoods为false，控制左侧列表数据滑动到指定index
+        // IsGoods is set to false, controlling the left list data to slide to the specified index.
         this.navTitleScroller.scrollToIndex(index);
       }
     }
@@ -104,7 +120,7 @@ struct CategoryPage {
     NavDestination() {
       Row() {
         if (this.requestSuccess) {
-          // 左侧列表数据展示
+          // Left List Data Display.
           List({ scroller: this.navTitleScroller }) {
             ForEach(this.categoryList, (item: NavTitleModel, index: number) => {
               ListItem() {
@@ -117,7 +133,7 @@ struct CategoryPage {
           .backgroundColor('#E6E9EB')
           .scrollBar(BarState.Off)
 
-          // 右侧列表内容展示
+          // Display of List Content on the Right.
           List({ scroller: this.goodsListScroller }) {
             ForEach(this.categoryList, (item: NavTitleModel) => {
               ListItemGroup({ space: 12, header: this.goodsHeaderBuilder(item.titleName) }) {
@@ -136,7 +152,7 @@ struct CategoryPage {
           .layoutWeight(1)
           .edgeEffect(EdgeEffect.None)
           .onScrollIndex((index: number) => {
-            // 传入当前列表项index和false
+            // Pass in the current list item index and false.
             this.listChange(index, false)
           })
         } else {
@@ -152,5 +168,6 @@ struct CategoryPage {
       .backgroundColor('#F1F3F5')
     }
     .hideTitleBar(true)
+    .backgroundColor('#F1F3F5')
   }
 }

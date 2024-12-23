@@ -33,12 +33,207 @@
       "value": "二级联动场景"
     },
     {
+      "name": "beijing",
+      "value": "北京"
+    },
+    {
+      "name": "more",
+      "value": "更多"
+    },
+    {
+      "name": "scenic_area",
+      "value": "景区%d"
+    },
+    {
+      "name": "scenic_area_1",
+      "value": "景区1"
+    },
+    {
+      "name": "scenic_area_2",
+      "value": "景区2"
+    },
+    {
+      "name": "scenic_area_3",
+      "value": "景区3"
+    },
+    {
+      "name": "scenic_area_4",
+      "value": "景区4"
+    },
+    {
+      "name": "scenic_area_5",
+      "value": "景区5"
+    },
+    {
+      "name": "popular_scenic_spots",
+      "value": "热门景区"
+    },
+    {
+      "name": "recommended_scenic_spots",
+      "value": "景区推荐"
+    },
+    {
+      "name": "small_scale_scenic_spots",
+      "value": "小众景区"
+    },
+    {
+      "name": "admission_fee",
+      "value": "门票"
+    },
+    {
+      "name": "city_recommendation",
+      "value": "城市推荐"
+    },
+    {
+      "name": "natural_scenery",
+      "value": "自然风光"
+    },
+    {
+      "name": "animals_and_plants",
+      "value": "动植物园"
+    },
+    {
+      "name": "theme_park",
+      "value": "主题乐园"
+    },
+    {
+      "name": "places_of_historic",
+      "value": "名胜古迹"
+    },
+    {
+      "name": "special_local_product",
+      "value": "特产"
+    },
+    {
+      "name": "other_services",
+      "value": "其它服务"
+    },
+    {
+      "name": "group_discount",
+      "value": "多人组团特惠："
+    },
+    {
+      "name": "single_ticket_price",
+      "value": "单人票价："
+    },
+    {
+      "name": "fee1",
+      "value": "999￥"
+    },
+    {
+      "name": "fee2",
+      "value": "1999￥"
+    },
+    {
+      "name": "no_more_data",
+      "value": "已经到底啦"
+    },
+    {
+      "name": "loading_more",
+      "value": "正在加载更多..."
+    },
+    {
       "name": "loading_data",
       "value": "数据加载中..."
     },
     {
+      "name": "follow",
+      "value": "关注"
+    },
+    {
+      "name": "hot_search",
+      "value": "热搜"
+    },
+    {
+      "name": "recommend",
+      "value": "推荐"
+    },
+    {
+      "name": "more_investment",
+      "value": "更多投资"
+    },
+    {
+      "name": "futures_trading",
+      "value": "期货"
+    },
+    {
+      "name": "foundation",
+      "value": "基金"
+    },
+    {
+      "name": "insurance",
+      "value": "保险"
+    },
+    {
+      "name": "hot_search_content",
+      "value": "热搜的内容"
+    },
+    {
+      "name": "recommend_content",
+      "value": "推荐的内容"
+    },
+    {
+      "name": "more_content",
+      "value": "更多的内容"
+    },
+    {
+      "name": "search",
+      "value": "搜索"
+    },
+    {
+      "name": "want_search",
+      "value": "猜你想搜..."
+    },
+    {
+      "name": "home_page",
+      "value": "首页"
+    },
+    {
+      "name": "manage_money_matters",
+      "value": "理财"
+    },
+    {
+      "name": "manage_money_matters_page",
+      "value": "理财页面"
+    },
+    {
+      "name": "transaction",
+      "value": "交易"
+    },
+    {
+      "name": "transaction_page",
+      "value": "交易页面"
+    },
+    {
+      "name": "message",
+      "value": "消息"
+    },
+    {
+      "name": "message_page",
+      "value": "消息页面"
+    },
+    {
+      "name": "my",
+      "value": "我的"
+    },
+    {
+      "name": "my_page",
+      "value": "我的页面"
+    },
+    {
       "name": "manager_content",
       "value": "育人之本，在于培根铸魂。思想政治理论课正是落实立德树人根本任务......"
+    },
+    {
+      "name": "current_city",
+      "value": "当前城市"
+    },
+    {
+      "name": "popular_cities",
+      "value": "热门城市"
+    },{
+      "name": "security",
+      "value": "证券"
     }
   ]
 }

@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 interface City {
   code: string,
   city: string
@@ -35,17 +50,18 @@ struct CityList {
     this.groupCities = data.cityList;
   }
 
-  // 分组列表header
+  // Group List Header.
   @Builder
-  itemHead(text: string) {
+  itemHead(text: ResourceStr) {
     Text(text)
       .width('100%')
       .height(45)
       .fontSize(16)
       .padding({ left: 10 })
-      .backgroundColor('#EEEEEE')
+      .backgroundColor('#F1F3F5')
   }
 
+  // List data content.
   @Builder
   textContent(content: string) {
     Text(content)
@@ -57,7 +73,7 @@ struct CityList {
       .backgroundColor('#FFFFFF')
   }
 
-  // 获取字母对应的城市数据
+  // Retrieve city data corresponding to letters.
   getCitiesWithGroupName(name: string): City[] {
     return this.groupCities[name];
   }
@@ -65,17 +81,17 @@ struct CityList {
   build() {
     NavDestination() {
       Stack({ alignContent: Alignment.End }) {
-        // 城市列表数据
+        // City List Data.
         List({ scroller: this.cityScroller }) {
-          // 当前城市
-          ListItemGroup({ header: this.itemHead('当前城市') }) {
+          // Current city.
+          ListItemGroup({ header: this.itemHead($r('app.string.current_city')) }) {
             ListItem() {
               this.textContent(this.currentCity);
             }
           }
 
-          // 热门城市
-          ListItemGroup({ header: this.itemHead('热门城市') }) {
+          // Popular cities.
+          ListItemGroup({ header: this.itemHead($r('app.string.popular_cities')) }) {
             ForEach(this.hotCities, (item: string) => {
               ListItem() {
                 this.textContent(item);
@@ -89,11 +105,11 @@ struct CityList {
             endMargin: 45
           })
 
-          // 城市数据
+          // City data.
           ForEach(this.groupWorldList, (item: string) => {
-            // 遍历出城市首字母，并作为城市分组数据的头部
+            // Traverse the first letter of the city and use it as the header of the city grouping data.
             ListItemGroup({ header: this.itemHead(item) }) {
-              // 根据字母，获取并展示对应城市数据
+              // Retrieve and display corresponding city data based on letters.
               ForEach(this.getCitiesWithGroupName(item), (cityItem: City) => {
                 ListItem() {
                   this.textContent(cityItem.city);
@@ -105,17 +121,17 @@ struct CityList {
         .width('100%')
         .height('100%')
         .scrollBar(BarState.Off)
-        .sticky(StickyStyle.Header) // 设置ListItemGroup的header吸顶，footer不吸底
+        .sticky(StickyStyle.Header) // Set the header of ListItemGroup to be the top, and the foot not to be the bottom.
         .onTouch(() => {
-          // 城市列表触摸滚动，isClickScroll为false，防止滚动过程中与导航列表出发滚动冲突
+          // Touch scrolling of city list, isClickScroll is false to prevent conflicts with navigation list scrolling during the scrolling process.
           this.isClickScroll = false;
         })
         .onScrollIndex((index: number) => {
-          // 通过selectNavIndex状态变量与index联动，控制导航列表选中状态
+          // By linking the selectNavIndex state variable with index, control the selection status of the navigation list.
           this.selectNavIndex = index - 2;
         })
 
-        // 侧边字母导航数据
+        // Side letter navigation data.
         Column() {
           List({ scroller: this.navListScroller }) {
             ForEach(this.groupWorldList, (item: string, index: number) => {
@@ -127,13 +143,15 @@ struct CityList {
                   .padding({ left: 10 })
                   .textAlign(TextAlign.Start)
                   .borderRadius(index === this.selectNavIndex ? '50%' : 0)
-                  .fontColor(index === this.selectNavIndex ? '#fff' : Color.Black)
-                  .backgroundColor(index === this.selectNavIndex ? '#bedaf2' : Color.Transparent)// 设置侧边导航选中时的背景颜色
+                  .fontColor(index === this.selectNavIndex ? '#fff' :
+                  Color.Black)// Set the background color when selecting the side navigation.
+                  .backgroundColor(index === this.selectNavIndex ? '#bedaf2' : Color.Transparent)
                   .onClick(() => {
                     this.selectNavIndex = index;
-                    // 导航列表选中，isClickScroll为true，防止与城市列表滚动过程中带动导航列表状态变化
+                    // Select the navigation list and set isClickScroll to true to prevent changes in the navigation list status during the scrolling process with the city list.
                     this.isClickScroll = true;
-                    // 通过cityScroller的scrollIndex方法，控制滑动城市列表指定Index，因为城市列表中有“当前城市”和“热门城市”，所以这里index需要+2
+                    // By using the scrollIndex method of cityScanner, control the sliding city list to specify the Index,
+                    // as there are "current city" and "popular city" in the city list, so the index needs to be incremented by 2.
                     this.cityScroller.scrollToIndex(index + 2, false, ScrollAlign.START);
                   })
               }
@@ -146,5 +164,6 @@ struct CityList {
       }
     }
     .hideTitleBar(true)
+    .backgroundColor('#F1F3F5')
   }
 }

@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 interface SwiperType {
   pic: string,
   title: string
@@ -11,8 +26,10 @@ export function HomePageBuilder() {
 @Component
 struct HomePage {
   @State noMoreData: boolean = false;
-  @State isRefreshing: boolean = false; // 是否正在刷新
-  @State productArray: string[] = ['景区1', '景区2', '景区3', '景区4', '景区5'];
+  @State isRefreshing: boolean = false; // Is refreshing in progress.
+  @State productArray: Resource[] =
+    [$r('app.string.scenic_area_1'), $r('app.string.scenic_area_2'), $r('app.string.scenic_area_3'),
+      $r('app.string.scenic_area_4'), $r('app.string.scenic_area_5')];
   private borderRadiusVal = 6;
   private swiperContent: SwiperType[] = [
     { pic: 'app.media.pic1', title: 'picture1' },
@@ -20,15 +37,18 @@ struct HomePage {
     { pic: 'app.media.pic3', title: 'picture3' },
     { pic: 'app.media.pic4', title: 'picture4' }
   ];
-  private productTitle: string[] = ['热门景区', '景区推荐', '小众景区'];
-  private gridTitle: string[] =
-    ['门票', '城市推荐', '自然风光', '动植物园', '主题乐园', '名胜古迹', '特产', '其它服务'];
+  private productTitle: Resource[] = [$r('app.string.popular_scenic_spots'), $r('app.string.recommended_scenic_spots'),
+    $r('app.string.small_scale_scenic_spots')];
+  private gridTitle: Resource[] =
+    [$r('app.string.admission_fee'), $r('app.string.city_recommendation'), $r('app.string.natural_scenery'),
+      $r('app.string.animals_and_plants'), $r('app.string.theme_park'), $r('app.string.places_of_historic'),
+      $r('app.string.special_local_product'), $r('app.string.other_services')];
 
-  // 搜索框
+  // search box.
   @Builder
   searchBuilder() {
     Row() {
-      Text('北京')
+      Text($r('app.string.beijing'))
         .width(50)
         .height(40)
         .fontSize(14)
@@ -38,7 +58,7 @@ struct HomePage {
         .layoutWeight(1)
       Blank()
         .width(15)
-      Text('更多')
+      Text($r('app.string.more'))
         .width(40)
         .height(40)
         .fontSize(14)
@@ -52,21 +72,19 @@ struct HomePage {
     .padding({ left: 15, right: 15 })
   }
 
-  // 轮播图
+  // Swiper content.
   @Builder
   bannerBuilder() {
     Swiper() {
       ForEach(this.swiperContent, (item: SwiperType) => {
         Stack({ alignContent: Alignment.BottomStart }) {
           Image($r(item.pic))
-          // .objectFit(ImageFit.Cover)
           Text(item.title)
             .width('100%')
             .height(30)
             .fontSize(12)
             .fontColor(Color.White)
             .textAlign(TextAlign.Center)
-          // .backgroundColor(0x1F000000)
         }
       }, (item: SwiperType) => JSON.stringify(item))
     }
@@ -83,11 +101,11 @@ struct HomePage {
     .borderRadius(this.borderRadiusVal)
   }
 
-  // 网格内容
+  // Grid content.
   @Builder
   gridBuilder() {
     Grid() {
-      ForEach(this.gridTitle, (item: string) => {
+      ForEach(this.gridTitle, (item: Resource) => {
         GridItem() {
           Column() {
             Image($r('app.media.pic1'))
@@ -98,7 +116,7 @@ struct HomePage {
               .padding({ top: 4 })
           }
         }
-      }, (item: string) => item)
+      }, (item: Resource) => JSON.stringify(item))
     }
     .width('100%')
     .rowsGap(10)
@@ -108,7 +126,7 @@ struct HomePage {
     .borderRadius(this.borderRadiusVal)
   }
 
-  // 自定义展示区域
+  // Customize display area.
   @Builder
   displayBuilder() {
     Row() {
@@ -126,21 +144,21 @@ struct HomePage {
     .justifyContent(FlexAlign.SpaceBetween)
   }
 
-  // 商品列表标题
+  // Product list title.
   @Builder
-  productHeader(title: string) {
+  productHeader(title: Resource) {
     Column() {
       Text(title)
         .width('100%')
         .height(50)
-        .backgroundColor('#eeeeee')
+        .backgroundColor('#EEEEEE')
         .padding({ left: 12 })
     }
   }
 
-  // 商品列表内容详情
+  // Product list content details
   @Builder
-  productDetailBuilder(title: string) {
+  productDetailBuilder(title: Resource) {
     Column() {
       Image($r('app.media.pic1'))
         .padding({ top: 12, bottom: 12 })
@@ -149,18 +167,18 @@ struct HomePage {
         Text(title)
           .fontWeight(FontWeight.Bold)
         Text() {
-          Span('多人组团特惠：')
+          Span($r('app.string.group_discount'))
             .fontSize(14)
             .fontColor(Color.Gray)
-          Span('999￥')
+          Span($r('app.string.fee1'))
             .fontSize(16)
             .fontColor(Color.Red)
         }
         .margin({ top: 12, bottom: 12 })
 
         Text() {
-          Span('单人票价：')
-          Span('1999￥')
+          Span($r('app.string.group_discount'))
+          Span($r('app.string.fee2'))
         }
         .fontSize(14)
         .fontColor(Color.Gray)
@@ -172,39 +190,26 @@ struct HomePage {
     }
   }
 
-  // 商品列表
+  // Product list.
   @Builder
   productListBuilder() {
-    ForEach(this.productTitle, (item: string, index: number) => {
+    ForEach(this.productTitle, (item: Resource) => {
       ListItemGroup({ header: this.productHeader(item) }) {
-        ForEach(this.productArray, (productItem: string) => {
+        ForEach(this.productArray, (productItem: Resource) => {
           ListItem() {
             this.productDetailBuilder(productItem);
           }
-        }, (productItem: string) => productItem)
-        // if (index === 2) {
-        //   ForEach(this.productArray, (productItem: string) => {
-        //     ListItem() {
-        //       this.productHeader(productItem);
-        //     }
-        //   }, (productItem: string) => productItem)
-        // } else {
-        //   ForEach(this.productArray, (productItem: string) => {
-        //     ListItem() {
-        //       this.productHeader(productItem);
-        //     }
-        //   }, (productItem: string) => productItem)
-        // }
+        }, (productItem: Resource) => JSON.stringify(productItem))
       }
       .divider({
         strokeWidth: 1,
         color: '#EEEEEE'
       })
       .borderRadius(this.borderRadiusVal)
-    }, (item: string) => item)
+    }, (item: Resource) => JSON.stringify(item))
   }
 
-  // 自定义上滑加载更多
+  // Customize swipe up loading for more.
   @Builder
   loadingDataBuilder() {
     Row() {
@@ -212,7 +217,7 @@ struct HomePage {
         LoadingProgress()
           .height('50%')
       }
-      Text(this.noMoreData ? '已经到底啦' : '正在加载更多...')
+      Text(this.noMoreData ? $r('app.string.no_more_data') : $r('app.string.loading_more'))
     }
     .justifyContent(FlexAlign.Center)
   }
@@ -220,31 +225,31 @@ struct HomePage {
   build() {
     NavDestination() {
       Column() {
-        // 顶部搜索框
+        // Top search box.
         this.searchBuilder();
-        // 下拉刷新组件
+        // Pull down refresh component.
         Refresh({ refreshing: $$this.isRefreshing }) {
-          // List作为长列表布局
+          // List as a long list layout.
           List({ space: 10 }) {
-            // Swiper轮播图模块
+            // Swiper
             ListItem() {
               this.bannerBuilder();
             }
 
-            // Grid网格模块
+            // Grid
             ListItem() {
               this.gridBuilder();
             }
 
-            // 自定义展示区域
+            // Customize display area.
             ListItem() {
               this.displayBuilder();
             }
 
-            // 商品分类列表
+            // Product classification list.
             this.productListBuilder();
 
-            // 自定义触底加载更多
+            // Customize bottom loading for more.
             ListItem() {
               this.loadingDataBuilder();
             }
@@ -255,24 +260,26 @@ struct HomePage {
           }
           .width('100%')
           .height('calc(100% - 60vp)')
-          .sticky(StickyStyle.Header) // 粘性标题
-          .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true }) // 设置并开启边缘滑动效果
-          .layoutWeight(2) // 设置组件的布局权重
-          // List组件触底模拟网络请求
+          .sticky(StickyStyle.Header) // Sticky title.
+          .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true }) // Set and enable edge sliding effect.
+          .layoutWeight(2) // Set layout weights for components.
+          // List component hits bottom to simulate network requests.
           .onReachEnd(() => {
             if (this.productArray.length >= 20) {
               this.noMoreData = true;
               return;
             }
             setTimeout(() => {
-              this.productArray.push('景区' + (this.productArray.length + 1));
+              this.productArray.push($r('app.string.scenic_area', (this.productArray.length + 1)));
             }, 2000)
           })
         }
-        // 下拉刷新，模拟网络请求
+        // Pull down refresh, simulate network request.
         .onRefreshing(() => {
           setTimeout(() => {
-            this.productArray = ['景区1', '景区2', '景区3', '景区4', '景区5'];
+            this.productArray =
+              [$r('app.string.scenic_area_1'), $r('app.string.scenic_area_2'), $r('app.string.scenic_area_3'),
+                $r('app.string.scenic_area_4'), $r('app.string.scenic_area_5')];
             this.noMoreData = false;
             this.isRefreshing = !this.isRefreshing;
           }, 2000)
@@ -281,8 +288,11 @@ struct HomePage {
       .width('95%')
     }
     .hideTitleBar(true)
+    .backgroundColor('#F1F3F5')
     .onWillHide(() => {
-      this.productArray = ['景区1', '景区2', '景区3', '景区4', '景区5'];
+      this.productArray =
+        [$r('app.string.scenic_area_1'), $r('app.string.scenic_area_2'), $r('app.string.scenic_area_3'),
+          $r('app.string.scenic_area_4'), $r('app.string.scenic_area_5')];
     })
   }
 }
