@@ -105,6 +105,14 @@
       "value": "special local product"
     },
     {
+      "name": "hotel",
+      "value": "hotel"
+    },
+    {
+      "name": "ride_hailing",
+      "value": "ride hailing"
+    },
+    {
       "name": "other_services",
       "value": "other services"
     },

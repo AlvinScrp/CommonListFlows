@@ -19,52 +19,53 @@ export struct CustomListItem {
   @State imgUrl: string | ResourceStr = '';
 
   build() {
-    Flex({ direction: FlexDirection.Column }) {
-      // avatar
+    Column() {
       Row() {
         Image(this.imgUrl)
-          .width(30)
-          .height(30)
-          .borderRadius(15)
+          .width(40)
+          .height(40)
+          .borderRadius(20)
+          .margin({ right: 8 })
         Column() {
           Text($r('app.string.security'))
-            .fontSize(16)
+            .fontSize(14)
+            .fontWeight(FontWeight.Bold)
           Text('12-21 12:00')
             .fontSize(12)
-            .fontColor('#FFCAC8C8')
+            .fontColor(Color.Black)
+            .opacity(0.6)
         }
-        .margin({ left: 5 })
-        .justifyContent(FlexAlign.Start)
         .alignItems(HorizontalAlign.Start)
       }
-      .margin({ top: 12, bottom: 12 })
+      .width('100%')
+      .justifyContent(FlexAlign.Start)
 
-      // news
-      Column() {
-        Text(this.title)
-          .fontSize(16)
-          .id('title')
-      }
-      .margin({ bottom: 12 })
-
-      // news image
+      Text(this.title)
+        .width('100%')
+        .fontSize(12)
+        .fontColor(Color.Black)
+        .opacity(0.6)
+        .margin({ top: 12, bottom: 12 })
       Row() {
         Image(this.imgUrl)
-          .width(110)
-          .height(110)
-          .borderRadius(8)
+          .width('31%')
+          .height(72)
+          .borderRadius(16)
         Image(this.imgUrl)
-          .width(110)
-          .height(110)
-          .borderRadius(8)
+          .width('31%')
+          .height(72)
+          .borderRadius(16)
         Image(this.imgUrl)
-          .width(110)
-          .height(110)
-          .borderRadius(8)
+          .width('31%')
+          .height(72)
+          .borderRadius(16)
       }
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
     }
-    .margin({ left: 12, right: 12, bottom: 12 })
+    .width('100%')
+    .padding(12)
+    .borderRadius(16)
+    .backgroundColor(Color.White)
   }
 }

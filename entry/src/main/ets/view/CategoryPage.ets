@@ -37,24 +37,6 @@ struct CategoryPage {
     }, 1500)
   }
 
-  // List content on the left.
-  @Builder
-  titleListBuilder(title: string, index: number) {
-    Text(title)
-      .width('100%')
-      .height(56)
-      .fontSize(this.currentTitleId === index ? 18 : 14)
-      .textAlign(TextAlign.Center)
-      .fontColor(this.currentTitleId === index ? '#0A59F7' : Color.Black)
-      .opacity(this.currentTitleId === index ? 1 : 0.6)
-      .backgroundColor(this.currentTitleId === index ? '#F1F3F5' : '#E6E9EB')
-      .fontWeight(this.currentTitleId === index ? FontWeight.Bold : FontWeight.Normal)
-      .onClick(() => {
-        // Pass in the current list item index and true.
-        this.listChange(index, true);
-      })
-  }
-
   // Right side list header.
   @Builder
   goodsHeaderBuilder(headerName: string) {
@@ -68,38 +50,6 @@ struct CategoryPage {
     .height(56)
     .padding({ left: 8 })
     .backgroundColor('#F1F3F5')
-  }
-
-  // List content on the right.
-  @Builder
-  goodsListBuilder(item: GoodsDataModel) {
-    Row() {
-      Image(item.imgUrl)
-        .height('100%')
-        .aspectRatio(1) // Set the aspect ratio of the component to 1.
-      Column() {
-        Text(item.goodsName)
-          .width('100%')
-          .fontSize(14)
-          .fontColor('#182431')
-          .maxLines(2)
-          .textOverflow({ overflow: TextOverflow.Clip })
-          .lineHeight(20)
-        Text('￥' + item.price)
-          .fontSize(18)
-          .fontColor('#FA2A2D')
-      }
-      .height('100%')
-      .padding(12)
-      .layoutWeight(1)
-      .alignItems(HorizontalAlign.Start)
-      .justifyContent(FlexAlign.SpaceBetween)
-    }
-    .clip(true)
-    .width('100%')
-    .height(96)
-    .backgroundColor('#FFFFFF')
-    .borderRadius(18)
   }
 
   // List sliding event.
@@ -124,7 +74,19 @@ struct CategoryPage {
           List({ scroller: this.navTitleScroller }) {
             ForEach(this.categoryList, (item: NavTitleModel, index: number) => {
               ListItem() {
-                this.titleListBuilder(item.titleName, index)
+                Text(item.titleName)
+                  .width('100%')
+                  .height(56)
+                  .fontSize(this.currentTitleId === index ? 18 : 14)
+                  .textAlign(TextAlign.Center)
+                  .fontColor(this.currentTitleId === index ? '#0A59F7' : Color.Black)
+                  .opacity(this.currentTitleId === index ? 1 : 0.6)
+                  .backgroundColor(this.currentTitleId === index ? '#F1F3F5' : '#E6E9EB')
+                  .fontWeight(this.currentTitleId === index ? FontWeight.Bold : FontWeight.Normal)
+                  .onClick(() => {
+                    // Pass in the current list item index and true.
+                    this.listChange(index, true);
+                  })
               }
             }, (item: NavTitleModel) => item.titleName)
           }
@@ -139,7 +101,32 @@ struct CategoryPage {
               ListItemGroup({ space: 12, header: this.goodsHeaderBuilder(item.titleName) }) {
                 ForEach(item.goodsList, (goodsItem: GoodsDataModel) => {
                   ListItem() {
-                    this.goodsListBuilder(goodsItem);
+                    Row() {
+                      Image(goodsItem.imgUrl)
+                        .height('100%')
+                        .aspectRatio(1) // Set the aspect ratio of the component to 1.
+                      Column() {
+                        Text(goodsItem.goodsName)
+                          .width('100%')
+                          .fontSize(14)
+                          .maxLines(2)
+                          .textOverflow({ overflow: TextOverflow.Clip })
+                          .lineHeight(20)
+                        Text('￥' + goodsItem.price)
+                          .fontSize(18)
+                          .fontColor(Color.Red)
+                      }
+                      .height('100%')
+                      .padding(12)
+                      .layoutWeight(1)
+                      .alignItems(HorizontalAlign.Start)
+                      .justifyContent(FlexAlign.SpaceBetween)
+                    }
+                    .clip(true)
+                    .width('100%')
+                    .height(96)
+                    .backgroundColor(Color.White)
+                    .borderRadius(18)
                   }
                 }, (goodsItem: GoodsDataModel) => JSON.stringify(goodsItem.goodsId))
               }

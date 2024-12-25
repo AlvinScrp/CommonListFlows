@@ -105,6 +105,14 @@
       "value": "特产"
     },
     {
+      "name": "hotel",
+      "value": "酒店住宿"
+    },
+    {
+      "name": "ride_hailing",
+      "value": "租车"
+    },
+    {
       "name": "other_services",
       "value": "其它服务"
     },
@@ -231,7 +239,8 @@
     {
       "name": "popular_cities",
       "value": "热门城市"
-    },{
+    },
+    {
       "name": "security",
       "value": "证券"
     }

@@ -143,9 +143,9 @@ struct CityList {
                   .padding({ left: 10 })
                   .textAlign(TextAlign.Start)
                   .borderRadius(index === this.selectNavIndex ? '50%' : 0)
-                  .fontColor(index === this.selectNavIndex ? '#fff' :
+                  .fontColor(index === this.selectNavIndex ? '#FFFFFF' :
                   Color.Black)// Set the background color when selecting the side navigation.
-                  .backgroundColor(index === this.selectNavIndex ? '#bedaf2' : Color.Transparent)
+                  .backgroundColor(index === this.selectNavIndex ? '#bEDAF2' : Color.Transparent)
                   .onClick(() => {
                     this.selectNavIndex = index;
                     // Select the navigation list and set isClickScroll to true to prevent changes in the navigation list status during the scrolling process with the city list.

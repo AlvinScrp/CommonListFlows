@@ -11,6 +11,12 @@
 * 二级联动场景
 
 ## 预览效果
+|  多类型列表项场景 | Tab吸顶场景  |
+|---|---|
+|  ![](screenshots/divice/homePage.gif) |  ![](screenshots/divice/managerPage.gif) |
+| 分组吸顶场景  | 二级联动场景  |
+| ![](screenshots/divice/cityList.gif)  |  ![](screenshots/divice/categoryPage.gif) |
+
 
 ## 工程目录
 ```
