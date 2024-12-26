@@ -134,10 +134,11 @@ struct CategoryPage {
           }
           .width('100%')
           .height('100%')
-          .padding({ left: 8, right: 12, bottom: 12 })
-          .sticky(StickyStyle.Header)
           .layoutWeight(1)
+          .scrollBar(BarState.Off)
+          .sticky(StickyStyle.Header)
           .edgeEffect(EdgeEffect.None)
+          .padding({ left: 8, right: 12, bottom: 12 })
           .onScrollIndex((index: number) => {
             // Pass in the current list item index and false.
             this.listChange(index, false)

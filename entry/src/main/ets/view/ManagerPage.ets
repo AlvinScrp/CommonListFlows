@@ -24,8 +24,8 @@ export function ManagerPageBuilder() {
 @Component
 struct ManagerPage {
   @State currentTabIndex: number = 0;
+  @State currentIndex: number = 0;
   private borderRadiusVal = 16;
-  private currentIndex: number = 0;
   private listScroller: Scroller = new Scroller();
   private scrollController: Scroller = new Scroller();
   private tabsController: TabsController = new TabsController();
@@ -49,9 +49,32 @@ struct ManagerPage {
     .padding(16)
   }
 
+  // TabBar Builder
+  @Builder
+  tabBuilder(img: Resource, title: Resource, index: number) {
+    Column() {
+      Image(img)
+        .width(20)
+        .height(20)
+        .fillColor(this.currentIndex === index ? '#0a59f7' : '#66000000')
+      Text(title)
+        .margin({ top: '4vp' })
+        .fontSize(10)
+        .fontWeight(500)
+        .fontColor(this.currentIndex === index ? '#0a59f7' : '#66000000')
+    }
+    .justifyContent(FlexAlign.Center)
+    .height('56vp')
+    .width('100%')
+    .onClick(() => {
+      this.currentIndex = index;
+      this.tabsController.changeIndex(this.currentIndex);
+    })
+  }
+
   build() {
     NavDestination() {
-      Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.tabsController }) {
+      Tabs({ barPosition: BarPosition.End, controller: this.tabsController }) {
         TabContent() {
           Stack({ alignContent: Alignment.Top }) {
             // Home page content.
@@ -90,7 +113,7 @@ struct ManagerPage {
                 }
 
                 Column() {
-                  // Customize Tabbar.
+                  // Customize tabBar.
                   Row({ space: 16 }) {
                     ForEach(this.tabArray, (item: string, index: number) => {
                       Text(item)
@@ -197,27 +220,27 @@ struct ManagerPage {
           .height('100%')
           .padding({ left: 16, right: 16 })
         }
-        .tabBar($r('app.string.home_page'))
+        .tabBar(this.tabBuilder($r('app.media.home'), $r('app.string.home_page'), 0))
 
         TabContent() {
           Text($r('app.string.manage_money_matters_page'))
         }
-        .tabBar($r('app.string.manage_money_matters'))
+        .tabBar(this.tabBuilder($r('app.media.manage_money'), $r('app.string.manage_money_matters'), 1))
 
         TabContent() {
           Text($r('app.string.transaction_page'))
         }
-        .tabBar($r('app.string.transaction'))
+        .tabBar(this.tabBuilder($r('app.media.transaction'), $r('app.string.transaction'), 2))
 
         TabContent() {
           Text($r('app.string.message_page'))
         }
-        .tabBar($r('app.string.message'))
+        .tabBar(this.tabBuilder($r('app.media.message'), $r('app.string.message'), 3))
 
         TabContent() {
           Text($r('app.string.my_page'))
         }
-        .tabBar($r('app.string.my'))
+        .tabBar(this.tabBuilder($r('app.media.mine'), $r('app.string.my'), 4))
       }
       .barHeight(56)
       .vertical(false)
