@@ -1,4 +1,4 @@
-# CommonListFlows
+# 基于List组件实现常见列表流场景
 
 ## 介绍
 列表流是采用以“行”为单位进行内容排列的布局形式，每“行”列表项通过文本、图片等不同形式的组合，高效地显示结构化的信息。
@@ -28,10 +28,10 @@
 │  ├──pages                              
 │  │  └──Index.ets                                      // 首页
 │  └──view  
-│  │  └──CategoryPage.ets                               // 二级联动场景页面
-│  │  └──CityList.ets                                   // 分组吸顶场景页面
-│  │  └──CustomListItem.ets                             // Tab吸顶场景列表内容
-│  │  └──HomePage.ets                                   // 多类型列表项场景页面
+│  │  ├──CategoryPage.ets                               // 二级联动场景页面
+│  │  ├──CityList.ets                                   // 分组吸顶场景页面
+│  │  ├──CustomListItem.ets                             // Tab吸顶场景列表内容
+│  │  ├──HomePage.ets                                   // 多类型列表项场景页面
 │  │  └──ManagerPage.ets                                // Tab吸顶场景页面
 │  └──view  
 │     └──LinkDataModel.ets                              // 二级联动场景数据
@@ -50,6 +50,6 @@
 
 ## 约束与显示
 * 本示例仅支持标准系统上运行，支持设备：华为手机。
-* HarmonyOS系统：HarmonyOS NEXT Release及以上。
-* DevEco Studio版本：DevEco Studio NEXT Release及以上。
-* HarmonyOS SDK版本：HarmonyOS NEXT Release SDK及以上。
+* HarmonyOS系统：HarmonyOS 5.0.0 Release及以上。
+* DevEco Studio版本：DevEco Studio 5.0.0 Release及以上。
+* HarmonyOS SDK版本：HarmonyOS 5.0.0 Release SDK及以上。

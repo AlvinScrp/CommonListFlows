@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { CustomListItem } from "./CustomListItem";
+import { CustomListItem } from './CustomListItem';
 
 @Builder
 export function ManagerPageBuilder() {
