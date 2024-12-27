@@ -178,7 +178,7 @@ struct ManagerPage {
                     .tabBar($r('app.string.more'))
                   }
                   .barHeight(0)
-                  .height('calc(100% - 105vp)')
+                  .height('calc(100% - 92vp)')
                   .onChange((index: number) => {
                     this.currentTabIndex = index;
                   })
