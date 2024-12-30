@@ -56,7 +56,7 @@ struct HomePage {
         .fontSize(18)
         .fontWeight(FontWeight.Bold)
         .padding({ left: 12 })
-        .backgroundColor(Color.White)
+        .backgroundColor('#F1F3F5')
     }
   }
 
@@ -65,7 +65,9 @@ struct HomePage {
   scenicSpotDetailBuilder(title: Resource) {
     Column() {
       Image($r('app.media.pic1'))
-        .padding({ top: 12, bottom: 12 })
+        .width('100%')
+        .height(186)
+        .padding({ top: 12, bottom: 8 })
         .borderRadius(this.borderRadiusVal)
       Column() {
         Text(title)
@@ -73,19 +75,19 @@ struct HomePage {
         Text() {
           Span($r('app.string.group_discount'))
             .fontSize(14)
-            .fontColor(Color.Gray)
+            .opacity(0.9)
           Span($r('app.string.fee1'))
             .fontSize(16)
             .fontColor(Color.Red)
         }
-        .margin({ top: 12, bottom: 12 })
+        .margin({ top: 4, bottom: 4 })
 
         Text() {
           Span($r('app.string.group_discount'))
           Span($r('app.string.fee2'))
         }
         .fontSize(14)
-        .fontColor(Color.Gray)
+        .opacity(0.9)
         .margin({ bottom: 12 })
       }
       .width('100%')
@@ -197,10 +199,6 @@ struct HomePage {
                   }
                 }, (scenicSpotItem: Resource) => JSON.stringify(scenicSpotItem))
               }
-              .divider({
-                strokeWidth: 1,
-                color: '#D9D9D9'
-              })
               .borderRadius(this.borderRadiusVal)
             }, (item: Resource) => JSON.stringify(item))
 

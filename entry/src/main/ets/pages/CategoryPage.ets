@@ -77,11 +77,11 @@ struct CategoryPage {
                 Text(item.titleName)
                   .width('100%')
                   .height(56)
-                  .fontSize(this.currentTitleId === index ? 18 : 14)
+                  .fontSize(this.currentTitleId === index ? 16 : 14)
                   .textAlign(TextAlign.Center)
                   .fontColor(this.currentTitleId === index ? '#0A59F7' : Color.Black)
-                  .opacity(this.currentTitleId === index ? 1 : 0.6)
-                  .backgroundColor(this.currentTitleId === index ? '#F1F3F5' : '#E6E9EB')
+                  .opacity(this.currentTitleId === index ? 1 :
+                    0.6)// .backgroundColor(this.currentTitleId === index ? '#F1F3F5' : '#E6E9EB')
                   .fontWeight(this.currentTitleId === index ? FontWeight.Bold : FontWeight.Normal)
                   .onClick(() => {
                     // Pass in the current list item index and true.
@@ -92,7 +92,7 @@ struct CategoryPage {
           }
           .width(100)
           .height('100%')
-          .backgroundColor('#E6E9EB')
+          // .backgroundColor('#E6E9EB')
           .scrollBar(BarState.Off)
 
           // Display of List Content on the Right.
@@ -138,6 +138,7 @@ struct CategoryPage {
           .scrollBar(BarState.Off)
           .sticky(StickyStyle.Header)
           .edgeEffect(EdgeEffect.None)
+          .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
           .padding({ left: 8, right: 12, bottom: 12 })
           .onScrollIndex((index: number) => {
             // Pass in the current list item index and false.
@@ -153,7 +154,6 @@ struct CategoryPage {
       .height('100%')
       .justifyContent(FlexAlign.Center)
       .alignSelf(ItemAlign.Center)
-      .backgroundColor('#F1F3F5')
     }
     .hideTitleBar(true)
     .backgroundColor('#F1F3F5')

@@ -57,7 +57,7 @@ struct CityList {
       .width('100%')
       .height(45)
       .fontSize(16)
-      .padding({ left: 10 })
+      .padding({ left: 16 })
       .backgroundColor('#F1F3F5')
   }
 
@@ -68,9 +68,9 @@ struct CityList {
       .width('100%')
       .height(45)
       .fontSize(16)
-      .padding(10)
+      .padding({ left: 16, top: 12, bottom: 12 })
       .textAlign(TextAlign.Start)
-      .backgroundColor('#FFFFFF')
+      .backgroundColor(Color.White)
   }
 
   // Retrieve city data corresponding to letters.

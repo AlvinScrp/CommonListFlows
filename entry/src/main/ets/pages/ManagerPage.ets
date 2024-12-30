@@ -80,37 +80,10 @@ struct ManagerPage {
             // Home page content.
             Scroll(this.scrollController) {
               Column() {
-                // More investment content.
-                Column() {
-                  Text($r('app.string.more_investment'))
-                    .width('100%')
-                    .fontSize(18)
-                    .fontWeight(FontWeight.Bold)
-                    .textAlign(TextAlign.Start)
-                    .margin({ bottom: 12 })
-                  List() {
-                    ListItem() {
-                      this.moreContentBuilder($r('app.string.futures_trading'))
-                    }
-
-                    ListItem() {
-                      this.moreContentBuilder($r('app.string.foundation'))
-                    }
-
-                    ListItem() {
-                      this.moreContentBuilder($r('app.string.insurance'))
-                    }
-                  }
+                Image($r('app.media.pic5'))
                   .width('100%')
+                  .height(186)
                   .borderRadius(this.borderRadiusVal)
-                  .backgroundColor(Color.White)
-                  .divider({
-                    strokeWidth: 1,
-                    color: '#D9D9D9',
-                    startMargin: 60,
-                    endMargin: 16
-                  })
-                }
 
                 Column() {
                   // Customize tabBar.
@@ -240,7 +213,7 @@ struct ManagerPage {
         TabContent() {
           Text($r('app.string.my_page'))
         }
-        .tabBar(this.tabBuilder($r('app.media.mine'), $r('app.string.my'), 4))
+        .tabBar(this.tabBuilder($r("app.media.mine"), $r('app.string.my'), 4))
       }
       .barHeight(56)
       .vertical(false)
