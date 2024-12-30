@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import goodsViewModel, { GoodsDataModel, NavTitleModel } from '../viewmodel/LinkDataModel';
+import goodsViewModel, { GoodsDataModel, NavTitleModel } from '../model/LinkDataModel';
 
 @Builder
 export function CategoryPageBuilder() {

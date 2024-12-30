@@ -26,14 +26,13 @@
 │  ├──entrybackupability
 │  │  └──EntryBackupAbility.ets
 │  ├──pages                              
-│  │  └──Index.ets                                      // 首页
-│  └──view  
+│  │  ├──Index.ets                                      // 首页
 │  │  ├──CategoryPage.ets                               // 二级联动场景页面
 │  │  ├──CityList.ets                                   // 分组吸顶场景页面
 │  │  ├──CustomListItem.ets                             // Tab吸顶场景列表内容
 │  │  ├──HomePage.ets                                   // 多类型列表项场景页面
 │  │  └──ManagerPage.ets                                // Tab吸顶场景页面
-│  └──view  
+│  └──model 
 │     └──LinkDataModel.ets                              // 二级联动场景数据
 └──entry/src/main/resources                             // 应用资源目录
 ```
