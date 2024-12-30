@@ -139,7 +139,7 @@ struct CategoryPage {
           .sticky(StickyStyle.Header)
           .edgeEffect(EdgeEffect.None)
           .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
-          .padding({ left: 8, right: 12, bottom: 12 })
+          .padding({ left: 8, right: 12 })
           .onScrollIndex((index: number) => {
             // Pass in the current list item index and false.
             this.listChange(index, false)

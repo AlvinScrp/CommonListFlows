@@ -55,7 +55,6 @@ struct HomePage {
         .height(50)
         .fontSize(18)
         .fontWeight(FontWeight.Bold)
-        .padding({ left: 12 })
         .backgroundColor('#F1F3F5')
     }
   }
@@ -67,7 +66,7 @@ struct HomePage {
       Image($r('app.media.pic1'))
         .width('100%')
         .height(186)
-        .padding({ top: 12, bottom: 8 })
+        .padding({ bottom: 12 })
         .borderRadius(this.borderRadiusVal)
       Column() {
         Text(title)
@@ -88,7 +87,7 @@ struct HomePage {
         }
         .fontSize(14)
         .opacity(0.9)
-        .margin({ bottom: 12 })
+        .margin({ bottom: 24 })
       }
       .width('100%')
       .justifyContent(FlexAlign.Start)
