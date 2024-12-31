@@ -121,6 +121,7 @@ struct CityList {
         .width('100%')
         .height('100%')
         .scrollBar(BarState.Off)
+        .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
         .sticky(StickyStyle.Header) // Set the header of ListItemGroup to be the top, and the foot not to be the bottom.
         .onTouch(() => {
           // Touch scrolling of city list, isClickScroll is false to prevent conflicts with navigation list scrolling during the scrolling process.
