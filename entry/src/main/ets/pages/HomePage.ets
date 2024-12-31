@@ -218,9 +218,10 @@ struct HomePage {
             .backgroundColor(Color.White)
           }
           .width('100%')
-          .height('calc(100% - 60vp)')
+          .height('100%')
           .scrollBar(BarState.Off)
           .sticky(StickyStyle.Header) // Sticky title.
+          .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
           .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true }) // Set and enable edge sliding effect.
           .layoutWeight(2) // Set layout weights for components.
           // List component hits bottom to simulate network requests.
