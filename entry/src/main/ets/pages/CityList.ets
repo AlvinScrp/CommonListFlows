@@ -144,8 +144,8 @@ struct CityList {
                   .padding({ left: 10 })
                   .textAlign(TextAlign.Start)
                   .borderRadius(index === this.selectNavIndex ? '50%' : 0)
-                  .fontColor(index === this.selectNavIndex ? '#FFFFFF' :
-                  Color.Black)// Set the background color when selecting the side navigation.
+                  // Set the background color when selecting the side navigation.
+                  .fontColor(index === this.selectNavIndex ? '#FFFFFF' : Color.Black)
                   .backgroundColor(index === this.selectNavIndex ? '#bEDAF2' : Color.Transparent)
                   .onClick(() => {
                     this.selectNavIndex = index;
