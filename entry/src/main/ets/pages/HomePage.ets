@@ -233,12 +233,13 @@ struct HomePage {
         }
         // Pull down refresh, simulate network request.
         .onRefreshing(() => {
+          this.isRefreshing = true;
           setTimeout(() => {
             this.scenicSpotArray =
               [$r('app.string.scenic_area_1'), $r('app.string.scenic_area_2'), $r('app.string.scenic_area_3'),
                 $r('app.string.scenic_area_4'), $r('app.string.scenic_area_5')];
             this.noMoreData = false;
-            this.isRefreshing = !this.isRefreshing;
+            this.isRefreshing = false;
           }, 2000)
         })
       }
