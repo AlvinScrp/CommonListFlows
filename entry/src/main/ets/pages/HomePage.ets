@@ -126,12 +126,6 @@ struct HomePage {
                 ForEach(this.swiperContent, (item: SwiperType) => {
                   Stack({ alignContent: Alignment.BottomStart }) {
                     Image($r(item.pic))
-                    Text(item.title)
-                      .width('100%')
-                      .height(30)
-                      .fontSize(12)
-                      .fontColor(Color.White)
-                      .textAlign(TextAlign.Center)
                   }
                 }, (item: SwiperType) => JSON.stringify(item))
               }
@@ -140,7 +134,10 @@ struct HomePage {
               .autoPlay(true)
               .duration(1000)
               .curve(Curve.Linear)
-              .indicator(false)
+              .indicator(
+                new DotIndicator()
+                  .selectedColor(Color.White)
+              )
               .itemSpace(10)
               .borderRadius(this.borderRadiusVal)
             }
@@ -206,16 +203,15 @@ struct HomePage {
               Row() {
                 if (!this.noMoreData) {
                   LoadingProgress()
-                    .height('50%')
+                    .width(24)
+                    .height(24)
                 }
                 Text(this.noMoreData ? $r('app.string.no_more_data') : $r('app.string.loading_more'))
               }
               .justifyContent(FlexAlign.Center)
             }
             .width('100%')
-            .height(50)
-            .borderRadius('50%')
-            .backgroundColor(Color.White)
+            .margin({ bottom: 65 })
           }
           .width('100%')
           .height('100%')
