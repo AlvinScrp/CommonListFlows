@@ -19,7 +19,7 @@ struct Index {
   @Provide('pageInfo') pageInfo: NavPathStack = new NavPathStack();
 
   @Builder
-  NavTitleBuilder() {
+  navTitleBuilder() {
     Text($r('app.string.common_list'))
       .fontSize(30)
       .fontWeight(700)
@@ -61,7 +61,7 @@ struct Index {
       .padding(16)
       .justifyContent(FlexAlign.End)
     }
-    .title(this.NavTitleBuilder())
+    .title(this.navTitleBuilder())
     .width('100%')
     .height('100%')
     .backgroundColor('#F1F3F5')
