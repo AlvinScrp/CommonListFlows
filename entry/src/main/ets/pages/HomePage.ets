@@ -228,7 +228,7 @@ struct HomePage {
             }
             setTimeout(() => {
               this.scenicSpotArray.push($r('app.string.scenic_area', (this.scenicSpotArray.length + 1)));
-            }, 2000)
+            }, 500)
           })
         }
         // Pull down refresh, simulate network request.
