@@ -1,0 +1,248 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "CommonListFlows"
+    },
+    {
+      "name": "common_list",
+      "value": "common list flow scenarios"
+    },
+    {
+      "name": "multiple_types_list",
+      "value": "multi type list item scenario"
+    },
+    {
+      "name": "top_tab_list",
+      "value": "multi type list item scenario"
+    },
+    {
+      "name": "group_ceiling",
+      "value": "group ceiling scenario"
+    },
+    {
+      "name": "secondary_linkage",
+      "value": "secondary linkage scenario"
+    },
+    {
+      "name": "beijing",
+      "value": "beijing"
+    },
+    {
+      "name": "more",
+      "value": "more"
+    },
+    {
+      "name": "scenic_area",
+      "value": "scenic area"
+    },
+    {
+      "name": "scenic_area_1",
+      "value": "scenic area 1"
+    },
+    {
+      "name": "scenic_area_2",
+      "value": "scenic area 2"
+    },
+    {
+      "name": "scenic_area_3",
+      "value": "scenic area 3"
+    },
+    {
+      "name": "scenic_area_4",
+      "value": "scenic area 4"
+    },
+    {
+      "name": "scenic_area_5",
+      "value": "scenic area 5"
+    },
+    {
+      "name": "popular_scenic_spots",
+      "value": "Popular scenic spots"
+    },
+    {
+      "name": "recommended_scenic_spots",
+      "value": "Recommended scenic spots"
+    },
+    {
+      "name": "small_scale_scenic_spots",
+      "value": "small scale scenic spots"
+    },
+    {
+      "name": "admission_fee",
+      "value": "admission fee"
+    },
+    {
+      "name": "city_recommendation",
+      "value": "city recommendation"
+    },
+    {
+      "name": "natural_scenery",
+      "value": "natural scenery"
+    },
+    {
+      "name": "animals_and_plants",
+      "value": "animals and plants"
+    },
+    {
+      "name": "theme_park",
+      "value": "theme park"
+    },
+    {
+      "name": "places_of_historic",
+      "value": "places of historic"
+    },
+    {
+      "name": "special_local_product",
+      "value": "special local product"
+    },
+    {
+      "name": "hotel",
+      "value": "hotel"
+    },
+    {
+      "name": "ride_hailing",
+      "value": "ride hailing"
+    },
+    {
+      "name": "other_services",
+      "value": "other services"
+    },
+    {
+      "name": "group_discount",
+      "value": "Multi person group discount:"
+    },
+    {
+      "name": "single_ticket_price",
+      "value": "single ticket price:"
+    },
+    {
+      "name": "fee1",
+      "value": "999￥"
+    },
+    {
+      "name": "fee2",
+      "value": "1999￥"
+    },
+    {
+      "name": "no_more_data",
+      "value": "it's already over"
+    },
+    {
+      "name": "loading_more",
+      "value": "loading more..."
+    },
+    {
+      "name": "loading_data",
+      "value": "loading data"
+    },
+    {
+      "name": "follow",
+      "value": "follow"
+    },
+    {
+      "name": "hot_search",
+      "value": "hot search"
+    },
+    {
+      "name": "recommend",
+      "value": "recommend"
+    },
+    {
+      "name": "more_investment",
+      "value": "more investment"
+    },
+    {
+      "name": "futures_trading",
+      "value": "futures trading"
+    },
+    {
+      "name": "foundation",
+      "value": "foundation"
+    },
+    {
+      "name": "insurance",
+      "value": "insurance"
+    },
+    {
+      "name": "hot_search_content",
+      "value": "hot search content"
+    },
+    {
+      "name": "recommend_content",
+      "value": "recommend content"
+    },
+    {
+      "name": "more_content",
+      "value": "more content"
+    },
+    {
+      "name": "search",
+      "value": "search"
+    },
+    {
+      "name": "want_search",
+      "value": "guess you want to search"
+    },
+    {
+      "name": "home_page",
+      "value": "home page"
+    },
+    {
+      "name": "manage_money_matters",
+      "value": "manage money matters"
+    },
+    {
+      "name": "manage_money_matters_page",
+      "value": "manage money matters page"
+    },
+    {
+      "name": "transaction",
+      "value": "transaction"
+    },
+    {
+      "name": "transaction_page",
+      "value": "transaction page"
+    },
+    {
+      "name": "message",
+      "value": "消息"
+    },
+    {
+      "name": "message_page",
+      "value": "message page"
+    },
+    {
+      "name": "my",
+      "value": "my"
+    },
+    {
+      "name": "my_page",
+      "value": "my page"
+    },
+    {
+      "name": "manager_content",
+      "value": "The foundation of education lies in bacon forging the soul. The ideological and political theory course is precisely the fundamental task of implementing moral education and talent cultivation......"
+    },
+    {
+      "name": "current_city",
+      "value": "current city"
+    },
+    {
+      "name": "popular_cities",
+      "value": "popular cities"
+    },
+    {
+      "name": "security",
+      "value": "security"
+    }
+  ]
+}
