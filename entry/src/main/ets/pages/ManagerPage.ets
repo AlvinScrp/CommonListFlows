@@ -127,7 +127,7 @@ struct ManagerPage {
                       .height('100%')
                       .scrollBar(BarState.Off)
                       .edgeEffect(EdgeEffect.None)
-                      // Customize the tabbar to achieve ceiling suction by combining the nestdScroll attribute with Calc to calculate height.
+                      // Customize the tabBar to achieve ceiling suction by combining the nestedScroll attribute with Calc to calculate height.
                       .nestedScroll({
                         scrollForward: NestedScrollMode.PARENT_FIRST,
                         scrollBackward: NestedScrollMode.SELF_FIRST

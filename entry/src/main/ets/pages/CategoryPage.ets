@@ -43,7 +43,6 @@ struct CategoryPage {
     Row() {
       Text(headerName)
         .fontSize(18)
-        .fontColor('#182431')
         .fontWeight(500)
     }
     .width('100%')
