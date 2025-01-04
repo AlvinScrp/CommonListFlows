@@ -243,6 +243,38 @@
     {
       "name": "security",
       "value": "证券"
+    },
+    {
+      "name": "selected_clothing",
+      "value": "精选服饰"
+    },
+    {
+      "name": "selected_accessories",
+      "value": "精选饰品"
+    },
+    {
+      "name": "down_jackets",
+      "value": "羽绒服"
+    },
+    {
+      "name": "casual_shoes",
+      "value": "休闲鞋"
+    },
+    {
+      "name": "jacket",
+      "value": "上衣"
+    },
+    {
+      "name": "pants",
+      "value": "裤子"
+    },
+    {
+      "name": "sports_matching",
+      "value": "运动搭配"
+    },
+    {
+      "name": "same_style",
+      "value": "明星同款"
     }
   ]
 }

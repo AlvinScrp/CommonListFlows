@@ -39,7 +39,7 @@ struct CategoryPage {
 
   // Right side list header.
   @Builder
-  goodsHeaderBuilder(headerName: string) {
+  goodsHeaderBuilder(headerName: Resource) {
     Row() {
       Text(headerName)
         .fontSize(18)
@@ -86,7 +86,7 @@ struct CategoryPage {
                     this.listChange(index, true);
                   })
               }
-            }, (item: NavTitleModel) => item.titleName)
+            }, (item: NavTitleModel) => JSON.stringify(item.titleName))
           }
           .width(100)
           .height('100%')

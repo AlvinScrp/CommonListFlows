@@ -243,6 +243,38 @@
     {
       "name": "security",
       "value": "security"
+    },
+    {
+      "name": "selected_clothing",
+      "value": "selected clothing"
+    },
+    {
+      "name": "selected_accessories",
+      "value": "selected accessories"
+    },
+    {
+      "name": "down_jackets",
+      "value": "down jackets"
+    },
+    {
+      "name": "casual_shoes",
+      "value": "casual shoes"
+    },
+    {
+      "name": "jacket",
+      "value": "jacket"
+    },
+    {
+      "name": "pants",
+      "value": "pants"
+    },
+    {
+      "name": "sports_matching",
+      "value": "sports matching"
+    },
+    {
+      "name": "same_style",
+      "value": "same style"
     }
   ]
 }
