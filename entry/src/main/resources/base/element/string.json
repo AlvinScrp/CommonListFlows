@@ -42,7 +42,7 @@
     },
     {
       "name": "scenic_area",
-      "value": "scenic area"
+      "value": "scenic area%d"
     },
     {
       "name": "scenic_area_1",
