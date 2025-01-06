@@ -14,7 +14,7 @@
     },
     {
       "name": "common_list",
-      "value": "common list flow scenarios"
+      "value": "common list flow"
     },
     {
       "name": "multiple_types_list",
@@ -190,7 +190,7 @@
     },
     {
       "name": "want_search",
-      "value": "guess you want to search"
+      "value": "guess you want to search..."
     },
     {
       "name": "home_page",
@@ -214,15 +214,15 @@
     },
     {
       "name": "message",
-      "value": "消息"
+      "value": "message"
     },
     {
       "name": "message_page",
       "value": "message page"
     },
     {
-      "name": "my",
-      "value": "my"
+      "name": "mine",
+      "value": "mine"
     },
     {
       "name": "my_page",
