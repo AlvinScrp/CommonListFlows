@@ -14,7 +14,7 @@
     },
     {
       "name": "common_list",
-      "value": "common list flow scenarios"
+      "value": "common list flow"
     },
     {
       "name": "multiple_types_list",
@@ -42,7 +42,7 @@
     },
     {
       "name": "scenic_area",
-      "value": "scenic area"
+      "value": "scenic area%d"
     },
     {
       "name": "scenic_area_1",
@@ -190,7 +190,7 @@
     },
     {
       "name": "want_search",
-      "value": "guess you want to search"
+      "value": "guess you want to search..."
     },
     {
       "name": "home_page",
@@ -214,15 +214,15 @@
     },
     {
       "name": "message",
-      "value": "消息"
+      "value": "message"
     },
     {
       "name": "message_page",
       "value": "message page"
     },
     {
-      "name": "my",
-      "value": "my"
+      "name": "mine",
+      "value": "mine"
     },
     {
       "name": "my_page",
@@ -243,6 +243,38 @@
     {
       "name": "security",
       "value": "security"
+    },
+    {
+      "name": "selected_clothing",
+      "value": "selected clothing"
+    },
+    {
+      "name": "selected_accessories",
+      "value": "selected accessories"
+    },
+    {
+      "name": "down_jackets",
+      "value": "down jackets"
+    },
+    {
+      "name": "casual_shoes",
+      "value": "casual shoes"
+    },
+    {
+      "name": "jacket",
+      "value": "jacket"
+    },
+    {
+      "name": "pants",
+      "value": "pants"
+    },
+    {
+      "name": "sports_matching",
+      "value": "sports matching"
+    },
+    {
+      "name": "same_style",
+      "value": "same style"
     }
   ]
 }

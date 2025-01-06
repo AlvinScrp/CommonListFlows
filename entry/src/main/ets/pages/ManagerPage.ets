@@ -136,14 +136,14 @@ struct ManagerPage {
                     .tabBar($r('app.string.follow'))
 
                     TabContent() {
+                      Text($r('app.string.hot_search_content'))
+                    }
+                      .tabBar($r('app.string.hot_search'))
+
+                    TabContent() {
                       Text($r('app.string.recommend_content'))
                     }
                     .tabBar($r('app.string.recommend'))
-
-                    TabContent() {
-                      Text($r('app.string.hot_search_content'))
-                    }
-                    .tabBar($r('app.string.hot_search'))
 
                     TabContent() {
                       Text($r('app.string.more_content'))
@@ -213,7 +213,7 @@ struct ManagerPage {
         TabContent() {
           Text($r('app.string.my_page'))
         }
-        .tabBar(this.tabBuilder($r("app.media.mine"), $r('app.string.my'), 4))
+        .tabBar(this.tabBuilder($r("app.media.mine"), $r('app.string.mine'), 4))
       }
       .barHeight(56)
       .vertical(false)
