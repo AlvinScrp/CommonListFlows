@@ -19,53 +19,55 @@ export struct CustomListItem {
   @State imgUrl: string | ResourceStr = '';
 
   build() {
-    Column() {
-      Row() {
-        Image(this.imgUrl)
-          .width(40)
-          .height(40)
-          .borderRadius(20)
-          .margin({ right: 8 })
-        Column() {
-          Text($r('app.string.security'))
-            .fontSize(14)
-            .fontWeight(FontWeight.Bold)
-          Text('12-21 12:00')
-            .fontSize(12)
-            .fontColor(Color.Black)
-            .opacity(0.6)
+    ListItem() {
+      Column() {
+        Row() {
+          Image(this.imgUrl)
+            .width(40)
+            .height(40)
+            .borderRadius(20)
+            .margin({ right: 8 })
+          Column() {
+            Text($r('app.string.security'))
+              .fontSize(14)
+              .fontWeight(FontWeight.Bold)
+            Text('12-21 12:00')
+              .fontSize(12)
+              .fontColor(Color.Black)
+              .opacity(0.6)
+          }
+          .alignItems(HorizontalAlign.Start)
         }
-        .alignItems(HorizontalAlign.Start)
-      }
-      .width('100%')
-      .justifyContent(FlexAlign.Start)
-
-      Text(this.title)
         .width('100%')
-        .fontSize(12)
-        .fontColor(Color.Black)
-        .opacity(0.6)
-        .margin({ top: 12, bottom: 12 })
-      Row() {
-        Image(this.imgUrl)
-          .width('32%')
-          .height(72)
-          .borderRadius(12)
-        Image(this.imgUrl)
-          .width('32%')
-          .height(72)
-          .borderRadius(12)
-        Image(this.imgUrl)
-          .width('32%')
-          .height(72)
-          .borderRadius(12)
+        .justifyContent(FlexAlign.Start)
+
+        Text(this.title)
+          .width('100%')
+          .fontSize(12)
+          .fontColor(Color.Black)
+          .opacity(0.6)
+          .margin({ top: 12, bottom: 12 })
+        Row() {
+          Image(this.imgUrl)
+            .width('32%')
+            .height(72)
+            .borderRadius(12)
+          Image(this.imgUrl)
+            .width('32%')
+            .height(72)
+            .borderRadius(12)
+          Image(this.imgUrl)
+            .width('32%')
+            .height(72)
+            .borderRadius(12)
+        }
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
       }
       .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
+      .padding(12)
+      .borderRadius(16)
+      .backgroundColor(Color.White)
     }
-    .width('100%')
-    .padding(12)
-    .borderRadius(16)
-    .backgroundColor(Color.White)
   }
 }

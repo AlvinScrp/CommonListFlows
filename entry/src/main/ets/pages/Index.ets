@@ -26,6 +26,13 @@ struct Index {
       .padding({ left: 16 })
   }
 
+  aboutToAppear(): void {
+    setTimeout(() => {
+      this.pageInfo.pushPathByName('ManagerPage', null);
+    }, 200)
+
+  }
+
   build() {
     Navigation(this.pageInfo) {
       Column() {
@@ -55,6 +62,14 @@ struct Index {
             // Jump to the second level linkage scene page.
             this.pageInfo.pushPathByName('CategoryPage', null);
           })
+          .margin({ bottom: 12 })
+        Button('Nested Scroll Demo')
+          .width('100%')
+          .onClick(() => {
+            // Jump to the second level linkage scene page.
+            this.pageInfo.pushPathByName('NestedScrollPage', null);
+          })
+          .margin({ bottom: 12 })
       }
       .width('100%')
       .height('100%')

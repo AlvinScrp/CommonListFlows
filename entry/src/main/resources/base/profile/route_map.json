@@ -25,6 +25,14 @@
       }
     },
     {
+      "name": "NestedScrollPage",
+      "pageSourceFile": "src/main/ets/pages/NestedScrollPage.ets",
+      "buildFunction": "NestedScrollPageBuilder",
+      "data": {
+        "description": "this is NestedScrollPage"
+      }
+    },
+    {
       "name": "CategoryPage",
       "pageSourceFile": "src/main/ets/pages/CategoryPage.ets",
       "buildFunction": "CategoryPageBuilder",
@@ -32,5 +40,6 @@
         "description": "this is CategoryPage"
       }
     }
+
   ]
 }
